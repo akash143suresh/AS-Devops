@@ -20,6 +20,17 @@ pipeline {
                 sh 'df -h'
             }
         }
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
 
+        stage('SCM Poll Test') {
+            steps {
+                sh '''
+                echo "SCM Poll Triggered Successfully"
+                date
+                '''
     }
 }
