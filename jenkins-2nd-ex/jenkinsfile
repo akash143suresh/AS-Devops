@@ -15,10 +15,10 @@ pipeline{
                 '''
             }
         }
-        stage('disk-usage'){
+        stage('disk-file'){
             steps{
                 sh '''
-                df -h
+                df -kh
                 '''
             }
         }
