@@ -1,26 +1,25 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('uptime'){
-            steps{
-                sh '''
-                uptime
-                '''
+
+    stages {
+
+        stage('Uptime') {
+            steps {
+                sh 'uptime'
             }
         }
-        storage ('Ram-Used'){
-            steps{
-                sh '''
-                free -h
-                '''
+
+        stage('RAM Usage') {
+            steps {
+                sh 'free -h'
             }
         }
-        stage('disk-file'){
-            steps{
-                sh '''
-                df -kh
-                '''
+
+        stage('Disk Usage') {
+            steps {
+                sh 'df -h'
             }
         }
+
     }
 }
